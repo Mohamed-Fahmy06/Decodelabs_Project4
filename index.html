@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="title">Code Zone — نموذج التقديم</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div aria-live="polite" aria-atomic="true" id="live-region"></div>
+
+<div class="top-bar">
+  <button id="theme-toggle" class="icon-btn" aria-label="Toggle Theme">
+    <!-- Sun icon by default, will be toggled in JS -->
+    <svg id="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </button>
+  <button id="lang-toggle" class="icon-btn font-mono" aria-label="Toggle Language">
+    EN
+  </button>
+</div>
+
+<header class="header">
+  <div class="logo">
+    <div class="logo-mark"></div>
+    <span class="logo-text">CODE ZONE</span>
+  </div>
+  <div class="header-badge" data-i18n="badge">BATCH 2026 — OPEN APPLICATIONS</div>
+  <h1><span data-i18n="h1_1">برنامج التدريب</span><br><span class="accent-text" data-i18n="h1_2">المتقدم</span></h1>
+  <p data-i18n="desc">قدّم طلبك الآن للانضمام إلى برنامج تطوير الواجهات الأمامية — المقاعد محدودة.</p>
+</header>
+
+<!-- PROGRESS -->
+<div class="progress-container" role="navigation" aria-label="خطوات التقديم">
+  <div class="progress-steps">
+    <div class="step-item">
+      <div class="step-circle active" id="step-circle-1" aria-current="step">١</div>
+      <span class="step-label active" id="step-label-1" data-i18n="step1">البيانات الشخصية</span>
+      <div class="step-line" id="step-line-1"></div>
+    </div>
+    <div class="step-item">
+      <div class="step-circle" id="step-circle-2">٢</div>
+      <span class="step-label" id="step-label-2" data-i18n="step2">المستوى التقني</span>
+      <div class="step-line" id="step-line-2"></div>
+    </div>
+    <div class="step-item">
+      <div class="step-circle" id="step-circle-3">٣</div>
+      <span class="step-label" id="step-label-3" data-i18n="step3">الحساب</span>
+      <div style="flex:1"></div>
+    </div>
+  </div>
+</div>
+
+<main class="container">
+
+  <!-- SECTION 1 -->
+  <div class="form-section active" id="section-1" role="group" aria-labelledby="s1-title">
+    <div class="section-card">
+      <div class="section-header">
+        <span class="section-num">STEP_01</span>
+        <h2 class="section-title" id="s1-title" data-i18n="s1_title">البيانات الشخصية</h2>
+      </div>
+
+      <div class="field-grid">
+        <div class="field-group">
+          <label class="field-label" for="fname">
+            <span data-i18n="fname_lbl">الاسم الأول</span> <span class="req" aria-hidden="true" data-i18n="req">*</span>
+          </label>
+          <input type="text" id="fname" name="fname" data-i18n-ph="fname_ph" placeholder="أحمد" autocomplete="given-name"
+            aria-required="true" aria-describedby="fname-msg">
+          <span class="field-msg" id="fname-msg" role="alert" aria-live="polite"></span>
+        </div>
+        <div class="field-group">
+          <label class="field-label" for="lname">
+            <span data-i18n="lname_lbl">الاسم الأخير</span> <span class="req" aria-hidden="true" data-i18n="req">*</span>
+          </label>
+          <input type="text" id="lname" name="lname" data-i18n-ph="lname_ph" placeholder="محمد" autocomplete="family-name"
+            aria-required="true" aria-describedby="lname-msg">
+          <span class="field-msg" id="lname-msg" role="alert" aria-live="polite"></span>
+        </div>
+      </div>
+
+      <div class="field-grid full">
+        <div class="field-group">
+          <label class="field-label" for="email">
+            <span data-i18n="email_lbl">البريد الإلكتروني</span> <span class="req" aria-hidden="true" data-i18n="req">*</span>
+          </label>
+          <input type="email" id="email" name="email" data-i18n-ph="email_ph" placeholder="ahmed@example.com" autocomplete="email"
+            aria-required="true" aria-describedby="email-msg">
+          <span class="field-msg" id="email-msg" role="alert" aria-live="polite"></span>
+        </div>
+      </div>
+
+      <div class="field-grid">
+        <div class="field-group">
+          <label class="field-label" for="age">
+            <span data-i18n="age_lbl">العمر</span> <span class="req" aria-hidden="true" data-i18n="req">*</span>
+          </label>
+          <input type="number" id="age" name="age" data-i18n-ph="age_ph" placeholder="22" min="16" max="50"
+            aria-required="true" aria-describedby="age-msg">
+          <span class="field-msg" id="age-msg" role="alert" aria-live="polite"></span>
+        </div>
+        <div class="field-group">
+          <label class="field-label" for="track">
+            <span data-i18n="track_lbl">المسار المطلوب</span> <span class="req" aria-hidden="true" data-i18n="req">*</span>
+          </label>
+          <select id="track" name="track" aria-required="true" aria-describedby="track-msg">
+            <option value="" data-i18n="track_opt0">— اختر مساراً —</option>
+            <option value="frontend">Frontend Development</option>
+            <option value="backend">Backend Development</option>
+            <option value="fullstack">Full Stack</option>
+            <option value="uiux">UI/UX Design</option>
+            <option value="devops">DevOps</option>
+          </select>
+          <span class="field-msg" id="track-msg" role="alert" aria-live="polite"></span>
+        </div>
+      </div>
+
+      <div class="btn-row">
+        <div style="font-size:12px;color:var(--text-dim);font-family:var(--mono)" data-i18n="step_1_of_3">الخطوة 1 من 3</div>
+        <button class="btn btn-primary" onclick="goToSection(2)">
+          <span data-i18n="next_btn">التالي</span>
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" class="rtl-flip"><path d="M10 3L5 8l5 5"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 2 -->
+  <div class="form-section" id="section-2" role="group" aria-labelledby="s2-title">
+    <div class="section-card">
+      <div class="section-header">
+        <span class="section-num">STEP_02</span>
+        <h2 class="section-title" id="s2-title" data-i18n="s2_title">المستوى التقني</h2>
+      </div>
+
+      <div class="field-grid full" style="margin-bottom:18px">
+        <div class="field-group">
+          <label class="field-label" id="level-label">
+            <span data-i18n="level_lbl">مستوى البرمجة</span> <span class="req" aria-hidden="true" data-i18n="req">*</span>
+          </label>
+          <div class="level-group" role="radiogroup" aria-labelledby="level-label" aria-required="true" id="level-group">
+            <input class="level-option" type="radio" name="level" id="lvl1" value="beginner">
+            <label class="level-label" for="lvl1" data-i18n="lvl1_lbl">مبتدئ</label>
+            <input class="level-option" type="radio" name="level" id="lvl2" value="intermediate">
+            <label class="level-label" for="lvl2" data-i18n="lvl2_lbl">متوسط</label>
+            <input class="level-option" type="radio" name="level" id="lvl3" value="advanced">
+            <label class="level-label" for="lvl3" data-i18n="lvl3_lbl">متقدم</label>
+            <input class="level-option" type="radio" name="level" id="lvl4" value="expert">
+            <label class="level-label" for="lvl4" data-i18n="lvl4_lbl">خبير</label>
+          </div>
+          <span class="field-msg" id="level-msg" role="alert" aria-live="polite"></span>
+        </div>
+      </div>
+
+      <div class="field-grid full">
+        <div class="field-group">
+          <label class="field-label" for="github">
+            <span data-i18n="github_lbl">رابط GitHub</span> <span class="req" aria-hidden="true" data-i18n="req">*</span>
+          </label>
+          <input type="url" id="github" name="github" data-i18n-ph="github_ph" placeholder="https://github.com/username"
+            aria-required="true" aria-describedby="github-msg github-hint">
+          <div class="input-hint" id="github-hint" data-i18n="github_hint">يجب أن يبدأ بـ https://github.com/</div>
+          <span class="field-msg" id="github-msg" role="alert" aria-live="polite"></span>
+        </div>
+      </div>
+
+      <div class="field-grid full">
+        <div class="field-group">
+          <label class="field-label" for="motivation">
+            <span data-i18n="motivation_lbl">رسالة الدوافع</span> <span class="req" aria-hidden="true" data-i18n="req">*</span>
+          </label>
+          <textarea id="motivation" name="motivation" rows="5"
+            data-i18n-ph="motivation_ph" placeholder="أخبرنا لماذا تريد الانضمام لهذا البرنامج، وما الذي تأمل أن تحققه..."
+            aria-required="true" aria-describedby="motivation-msg motivation-counter"
+            maxlength="500"></textarea>
+          <div class="char-counter" id="motivation-counter" aria-live="polite">
+            <span id="char-val">0</span> / 500 <span data-i18n="char_lbl">حرف (الحد الأدنى: 80 حرفاً)</span>
+          </div>
+          <span class="field-msg" id="motivation-msg" role="alert" aria-live="polite"></span>
+        </div>
+      </div>
+
+      <div class="btn-row">
+        <button class="btn btn-secondary" onclick="goToSection(1)">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" class="rtl-flip"><path d="M6 3l5 5-5 5"/></svg>
+          <span data-i18n="prev_btn">السابق</span>
+        </button>
+        <button class="btn btn-primary" onclick="goToSection(3)">
+          <span data-i18n="next_btn">التالي</span>
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" class="rtl-flip"><path d="M10 3L5 8l5 5"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 3 -->
+  <div class="form-section" id="section-3" role="group" aria-labelledby="s3-title">
+    <div class="section-card">
+      <div class="section-header">
+        <span class="section-num">STEP_03</span>
+        <h2 class="section-title" id="s3-title" data-i18n="s3_title">إنشاء الحساب</h2>
+      </div>
+
+      <div class="field-grid full">
+        <div class="field-group">
+          <label class="field-label" for="password">
+            <span data-i18n="pw_lbl">كلمة المرور</span> <span class="req" aria-hidden="true" data-i18n="req">*</span>
+          </label>
+          <input type="password" id="password" name="password" data-i18n-ph="pw_ph" placeholder="أدخل كلمة مرور قوية"
+            aria-required="true" aria-describedby="pw-rules-desc pw-msg">
+          <div class="strength-bar" aria-hidden="true"><div class="strength-fill" id="strength-fill"></div></div>
+          <div class="strength-text" id="strength-text" aria-live="polite"></div>
+          <div class="pw-rules" id="pw-rules-desc" aria-label="متطلبات كلمة المرور">
+            <div class="pw-rule" id="rule-len"><span class="pw-rule-dot"></span><span data-i18n="rule_len">8 أحرف على الأقل</span></div>
+            <div class="pw-rule" id="rule-upper"><span class="pw-rule-dot"></span><span data-i18n="rule_upper">حرف كبير (A-Z)</span></div>
+            <div class="pw-rule" id="rule-lower"><span class="pw-rule-dot"></span><span data-i18n="rule_lower">حرف صغير (a-z)</span></div>
+            <div class="pw-rule" id="rule-num"><span class="pw-rule-dot"></span><span data-i18n="rule_num">رقم (0-9)</span></div>
+            <div class="pw-rule" id="rule-special"><span class="pw-rule-dot"></span><span data-i18n="rule_special">رمز خاص (!@#$...)</span></div>
+          </div>
+          <span class="field-msg" id="pw-msg" role="alert" aria-live="polite"></span>
+        </div>
+      </div>
+
+      <div class="field-grid full">
+        <div class="field-group">
+          <label class="field-label" for="confirm">
+            <span data-i18n="confirm_lbl">تأكيد كلمة المرور</span> <span class="req" aria-hidden="true" data-i18n="req">*</span>
+          </label>
+          <input type="password" id="confirm" name="confirm" data-i18n-ph="confirm_ph" placeholder="أعد إدخال كلمة المرور"
+            aria-required="true" aria-describedby="confirm-msg">
+          <span class="field-msg" id="confirm-msg" role="alert" aria-live="polite"></span>
+        </div>
+      </div>
+
+      <div class="btn-row">
+        <button class="btn btn-secondary" onclick="goToSection(2)">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" class="rtl-flip"><path d="M6 3l5 5-5 5"/></svg>
+          <span data-i18n="prev_btn">السابق</span>
+        </button>
+        <button class="btn btn-primary" id="submit-btn" onclick="submitForm()">
+          <span data-i18n="submit_btn">إرسال الطلب</span>
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" class="rtl-flip"><path d="M2 8h12M8 2l6 6-6 6"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUCCESS -->
+  <div class="success-page" id="success-page" role="main" aria-live="polite">
+    <div class="success-icon" aria-hidden="true">✓</div>
+    <h2 data-i18n="success_h2">تم إرسال طلبك!</h2>
+    <p data-i18n="success_p">سنراجع طلبك خلال 3-5 أيام عمل وسنتواصل معك على بريدك الإلكتروني.</p>
+    <div class="success-id" id="app-id" aria-label="رقم الطلب"></div>
+    <div class="summary-card" id="summary-card" aria-label="ملخص بياناتك"></div>
+  </div>
+
+</main>
+
+<footer class="form-footer" data-i18n="footer_text">
+  CODE ZONE — BATCH 2026 — جميع الحقوق محفوظة
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
